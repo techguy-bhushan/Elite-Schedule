@@ -28,4 +28,11 @@ All app preview screenshots were taken by running `ionic serve --lab`
  * Android - Run `ionic cordova run android --prod`
    - If you are deploying to Android 4.4 or below I recommend adding crosswalk: `cordova plugin add cordova-plugin-crosswalk-webview`
  * iOS - Run `ionic cordova run ios --pro
-
+ 
+ 
+ Update google map key :
+ https://github.com/techguy-bhushan/Elite-Schedule/blob/master/src/app/app.module.ts
+ 
+  `AgmCoreModule.forRoot({apiKey: 'AIzaSyDEAOMY-dsotANOecM6ZqlOfOjBLn9sUkU'}),`
+  
+replace apiKey with yours map key in app.module.ts

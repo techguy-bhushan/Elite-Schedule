@@ -1,0 +1,99 @@
+<!--
+  Generated template for the StandingPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!--<ion-header>
+
+  <ion-navbar>
+    <ion-title>Standing</ion-title>
+  </ion-navbar>
+
+</ion-header>-->
+<ion-header>
+
+  <ion-navbar>
+  </ion-navbar>
+
+  <ion-toolbar>
+    <ion-segment color="secondary" [(ngModel)]="divisionFilter" (ionChange)="filterDivision($event)">
+      <ion-segment-button value="division">
+        Division
+      </ion-segment-button>
+      <ion-segment-button value="all">
+        All
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list [virtualScroll]="standings" [approxItemHeight]="'132px'" [headerFn]="getHeader">
+    <ion-item-divider color="secondary" *virtualHeader="let header">
+<!--
+      {{divison.divisionName}}
+-->
+      {{header}}
+    </ion-item-divider>
+      <ion-item *virtualItem="let team" >
+        <ion-row>
+          <ion-col>
+            <h2 ion-text color="primary">
+              {{team.teamName}}
+            </h2>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <h4>Win</h4>
+          </ion-col>
+          <ion-col>
+            <h4> Losses</h4>
+          </ion-col>
+          <ion-col>
+            <h4>Pct</h4>
+          </ion-col>
+          <ion-col>
+            <h4>PF</h4>
+          </ion-col>
+          <ion-col>
+            <h4>PA</h4>
+          </ion-col>
+          <ion-col>
+            <h4>Diff</h4>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <h5>{{team.wins}}</h5>
+          </ion-col>
+          <ion-col>
+            <h5>{{team.losses}}</h5>
+          </ion-col>
+          <ion-col>
+            <h5>{{team.winningPct}}</h5>
+          </ion-col>
+          <ion-col>
+            <h5>{{team.pointsFor}}</h5>
+          </ion-col>
+          <ion-col>
+            <h5>{{team.pointsAgainst}}</h5>
+          </ion-col>
+          <ion-col>
+            <h5>{{team.pointsDiff}}</h5>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+  </ion-list>
+<!--<ion-list >
+  <ion-item-group *ngFor="let divison of allStandings">
+
+    <ion-item *ngFor="let team of divison.divisionStandings">
+
+    </ion-item>
+
+  </ion-item-group>
+</ion-list>-->
+</ion-content>
